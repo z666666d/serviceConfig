@@ -1,0 +1,30 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: micro-service #应用程序名称
+
+eureka:
+  client:
+    service-url: #添加注册中心地址，将客户端注册进eureka服务列表内
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+     #服务标识符
+    instance-id: micro-service-8081
+    prefer-ip-address: true #鼠标悬停在标识符上显示IP
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+info:
+  app.name: micro-service-8081
+  company.name: www.demo.com
+  artifactId: micro-service-8081
+  version: 0.0.1-SNAPSHOT
+
+#
